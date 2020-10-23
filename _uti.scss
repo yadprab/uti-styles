@@ -20,6 +20,22 @@
     --error: hsl(356, 69%, 56%);
     --success: hsl(163, 72%, 41%);
     --focus: hsl(37, 97%, 70%);
+    //blue-shades
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    --font: 'Kumbh Sans', sans-serif;
+
+    //Background gradient:
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+
+
+    //text
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+    //divider
+    --Light-grayish-blue: hsl(240, 5%, 91%);
 
     //web-safe-blue
     --blue-1: #9999ff;
@@ -60,8 +76,14 @@
 
 }
 
-
-
+//z-index
+$z-index: (
+  modal     : 9000, 
+  overlay   : 8000,
+  dropdown  : 7000,
+  header    : 6000,
+  footer    : 5000
+);
 
 
 
@@ -160,6 +182,15 @@
     font-weight: var(--fontW);
 }
 
+@mixin  secondary-title {
+    text-transform: capitalize;
+    font-family: var(--font);
+    font-weight: var(--fontW);
+
+    
+}
+
+
 //nav-bar
 
 @mixin nav-mobile {
@@ -220,4 +251,25 @@
     display: inline-block;
     position: relative;
 
+}
+
+@mixin nav-links-hover {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid var(--dark-2);
+
+    
+}
+
+@mixin after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
 }
