@@ -372,3 +372,73 @@ $z-index: (modal : 9000,
     }
 
 }
+//form
+@mixin form {
+    width: 100%;
+    @include box-shadow-3;
+    background-color: var(--white-2);
+    padding: 2em;
+    max-width: var(--max-width-mob);
+    height: 100%;
+    @include flex-2;
+    justify-content: space-around;
+
+    section {
+        width: 100%;
+
+        @include flex-2;
+        justify-content: flex-start;
+        text-transform: capitalize;
+        font-family: var(--font);
+
+
+        &>* {
+            width: 100%;
+            margin-bottom: 0.5em;
+        }
+
+        label {
+            @include secondary-title;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        input:not(#submit) {
+            height: 40px;
+            appearance: none;
+            border: none;
+            padding: 1em;
+            transition: all 0.5s ease-in;
+            outline: 1px solid rgba($color: #000000, $alpha: var(--alpha-5));
+
+            &:hover {
+                outline-color: var(--focus);
+            }
+        }
+
+        #submit {
+            margin-top: 2em;
+            height: 40px;
+            @include button;
+            transition: all 0.5s ease-in;
+            background-color: var(--green-1);
+            color: var(--dark-2);
+
+            &:hover {
+                background-color: var(--green-2);
+
+            }
+        }
+
+    }
+
+
+    .error {
+        outline-color: var(--error);
+    }
+
+    .success {
+        outline-color: var(--success);
+    }
+
+}
